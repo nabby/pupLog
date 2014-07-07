@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>pupLog</title>
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/pupLog.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/pupLog.js"></script>
+
+<script>
+$().ready(function() {
+console.log('go');
+	var plApp = new pupLog.App();
+});
+</script>
+
+</head>
+<body>
+
+
+<div class="pane" id="dogePane">
+	<header>
+		<button data-act="reset">reset</button>
+		<h1>doge</h1>
+	</header>
+	
+	<ul class="content">
+		<li class="pee" data-type="pee">
+			<span></span>
+			<button class="add" data-act="add">+</button>
+		</li>
+
+		<li class="poo" data-type="poo">
+			<span></span>
+			<button class="add" data-act="add">+</button>
+		</li>
+
+		<li class="eat" data-type="eat">
+			<span></span>
+			<button class="add" data-act="add">+</button>
+		</li>
+	<ul>
+</div>
+
+<div class="modal fade logEntryPrompt" id="logEntryPrompt" data-type="pee">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cancel</span></button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+				<input type="datetime-local" name="datetime">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-primary" data-act="logEntryPrompt">Enter</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+</body>
+</html>

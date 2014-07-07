@@ -1,0 +1,123 @@
+@import 'css/mixins/mixins';
+
+$headerH: 80px;
+$itemH: 100px;
+
+$borderColor1: #ccc;
+
+* {
+	@include box-sizing(border-box);
+}
+
+body {
+	@extend %fullsize;
+	overflow: hidden;
+}
+
+.pane {
+	@extend %fullsize;
+	position: relative;
+	
+
+	header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $headerH;
+		padding: 0 20px;
+		background: #f5f5f5;
+		border-bottom: 1px solid $borderColor1;
+		
+		button {
+			float: right;
+			margin: 20px;
+		}
+	}
+	
+	ul.content {
+		@extend %fullsize;
+		position: fixed;
+		
+		margin-top: $headerH;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		list-style: none;
+
+		li {
+			width: 100%;
+			height: $itemH;
+			line-height: $itemH;
+			border-bottom: 1px solid $borderColor1;
+			clear: both;
+			font-size: 24px;
+			padding: 0 20px;
+			
+			&:before {
+				color: #999;
+			}
+			
+			&.pee {
+				&:before { color: yellow; content: 'piddle'; }
+			}
+			
+			&.poo {
+				&:before { color: brown; content: 'doodoo'; }
+			}
+			
+			&.eat {
+				&:before { color: orange; content: 'nomnom'; }
+			}
+			
+			button.add {
+				float: right;
+				height: 60px;
+				width: 60px;
+				padding: 0;
+				margin: 20px;
+				background: #e5e5e5;
+				border: 1px solid #ccc;
+				border-radius: 30px;
+				font-size: 30px;
+				line-height: 24px;
+				color: #999;
+				outline: none;
+				
+				&:hover {
+					background: #f6f6f6;
+				}
+				
+				&:active {
+					background: #ddd;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+
+%time {
+	margin-right: 0.25em;
+}
+
+.day {
+	@extend %time;
+	&:after {
+		content: ' day';
+	}
+}
+
+.hr {
+	@extend %time;
+	&:after {
+		content: ' hr';
+	}
+}
+
+.min {
+	@extend %time;
+	&:after {
+		content: ' min ago';
+	}
+}

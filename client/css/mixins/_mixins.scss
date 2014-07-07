@@ -1,0 +1,35 @@
+@mixin transition($prop: all, $time: 0.3s, $ease: ease-in-out) {	
+	-webkit-transition: #{$prop} #{$time} #{$ease};
+	-moz-transition: #{$prop} #{$time} #{$ease};
+	-o-transition: #{$prop} #{$time} #{$ease};
+	-ms-transition: #{$prop} #{$time} #{$ease};
+	transition: #{$prop} #{$time} #{$ease};
+}
+
+@mixin shadow($xOfs: 1px, $yOfs: 1px, $blur: 1px, $spread: 0, $clr: rgba(0, 0, 0, 0.05), $inset: '') {
+    -webkit-box-shadow: #{$xOfs} #{$yOfs} #{$blur} #{$spread} #{$clr} #{$inset};
+    -moz-box-shadow: #{$xOfs} #{$yOfs} #{$blur} #{$spread} #{$clr} #{$inset};
+    box-shadow: #{$xOfs} #{$yOfs} #{$blur} #{$spread} #{$clr} #{$inset};
+}
+
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: #{$type};
+	-moz-box-sizing: #{$type};
+	box-sizing: #{$type};
+}
+
+%ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+}
+
+%fullsize {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right:0;
+	padding: 0;
+	margin: 0;
+}
